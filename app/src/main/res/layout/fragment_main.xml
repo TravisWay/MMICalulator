@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.travisway.shoppinghelp.MainActivity$PlaceholderFragment">
+
+
+    <Button
+        android:id="@+id/ten"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="10%"
+        android:layout_below="@+id/five"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/fifteen"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="15%"
+        android:layout_below="@+id/ten"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/twenty"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_green_dark"
+        android:elevation="0dp"
+        android:text="20%"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_below="@+id/fifteen"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/five"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="5%"
+        android:layout_below="@+id/inputPercent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp" />
+
+    <EditText
+        android:id="@+id/inputPercent"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:textAlignment="center"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+    <EditText
+        android:id="@+id/customPercent"
+        android:layout_width="109dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:textAlignment="center"
+        android:layout_below="@+id/calculate"
+        android:layout_alignRight="@+id/inputPercent"
+        android:layout_alignEnd="@+id/inputPercent"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
+
+    <Button
+        android:id="@+id/calculate"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="Percent"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/ten"
+        android:layout_alignBottom="@+id/ten"
+        android:layout_alignRight="@+id/inputPercent"
+        android:layout_alignEnd="@+id/inputPercent"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/five"
+        android:layout_toRightOf="@+id/five"
+        android:text="Original Price"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
