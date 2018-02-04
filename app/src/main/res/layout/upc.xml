@@ -7,37 +7,44 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.travisway.shoppinghelp.MainActivity$PlaceholderFragment">
+    tools:context="com.travisway.shoppinghelp1.com.travisway.shoppinghelp.MainActivity$PlaceholderFragment">
 
+
+    <TextView
+        android:id="@+id/UPC1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/price1"
+        android:layout_toEndOf="@+id/price1"
+        android:layout_toRightOf="@+id/price1"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="34dp"
 
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/units1"
+        android:layout_marginTop="35dp"
         android:text="Units"
         android:textAlignment="center"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/units1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="100dp"
         android:layout_height="30dp"
 
+        android:layout_alignLeft="@+id/units1"
+        android:layout_alignStart="@+id/units1"
+        android:layout_below="@+id/textView7"
         android:text="Units"
         android:textAlignment="center"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/textView7"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
+        android:textStyle="bold" />
 
 
     <TextView
@@ -86,8 +93,8 @@
         android:textAlignment="center"
         android:textSize="18sp"
         android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5" />
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
     <EditText
         android:id="@+id/price2"
@@ -122,17 +129,17 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5" />
+        android:layout_toLeftOf="@+id/item1"
+        android:layout_toStartOf="@+id/item1" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:layout_above="@+id/textView3"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_alignRight="@+id/textView2"
 
+        android:layout_above="@+id/textView3"
+        android:layout_toLeftOf="@+id/item1"
+        android:layout_toStartOf="@+id/item1"
         android:text="Item 2"
         android:textAlignment="textStart"
         android:textAllCaps="true"
@@ -143,15 +150,15 @@
         android:id="@+id/item1"
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:layout_alignTop="@+id/textView4"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5"
         android:layout_toRightOf="@+id/textView5"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:layout_toLeftOf="@+id/price1"
-        android:layout_toStartOf="@+id/price1" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/item2"
@@ -168,33 +175,84 @@
     <Button
         android:id="@+id/clear"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
+
+        android:layout_alignBaseline="@+id/upc"
+        android:layout_alignBottom="@+id/upc"
+        android:layout_alignLeft="@+id/asterisk4"
+        android:layout_alignStart="@+id/asterisk4"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:background="@android:color/black"
         android:elevation="20dp"
-
         android:text="Clear"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:layout_alignBaseline="@+id/upc"
-        android:layout_alignBottom="@+id/upc"
-        android:layout_toRightOf="@+id/item2"
-        android:layout_toEndOf="@+id/item2" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/upc"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+
+        android:layout_below="@+id/units2"
+        android:layout_marginTop="23dp"
         android:background="#118c01"
         android:elevation="24dp"
-
         android:text="Calculate"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/units2"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/UPC2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/price2"
+        android:layout_toEndOf="@+id/price2"
+        android:layout_toRightOf="@+id/price2"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/asterisk3"
+        android:layout_width="15sp"
+        android:layout_height="15sp"
+        android:layout_alignLeft="@+id/units2"
+        android:layout_alignStart="@+id/units2"
+        android:layout_below="@+id/textView2"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/asterisk2"
+        android:layout_width="15sp"
+        android:layout_height="15sp"
+        android:layout_alignLeft="@+id/price1"
+        android:layout_alignStart="@+id/price1"
+        android:layout_below="@+id/textView4"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/asterisk4"
+        android:layout_width="15sp"
+        android:layout_height="15sp"
+        android:layout_below="@+id/textView3"
+        android:layout_toEndOf="@+id/item2"
+        android:layout_toRightOf="@+id/item2"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/asterisk1"
+        android:layout_width="15sp"
+        android:layout_height="15sp"
+        android:layout_alignLeft="@+id/units1"
+        android:layout_alignStart="@+id/units1"
+        android:layout_below="@+id/textView5"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp" />
 
 </RelativeLayout>

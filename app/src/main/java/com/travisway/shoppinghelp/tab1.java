@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.travisway.shoppinghelp1.R;
+
 /**
  * Created by travisway on 10/8/17.
  */
@@ -33,20 +35,25 @@ public class tab1 extends Fragment {
         final EditText input = (EditText) InputFragmentView.findViewById(R.id.inputPercent);
         final EditText cusPer = (EditText) InputFragmentView.findViewById(R.id.cusPer);
         final TextView answer = (TextView) InputFragmentView.findViewById(R.id.answer);
+        final TextView asterisk = (TextView) InputFragmentView.findViewById(R.id.asterisk);
+        final TextView asterisk2 = (TextView) InputFragmentView.findViewById(R.id.asterisk2);
+
 
         cal.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean emp = Empty.Emp((EditText) input);
                 boolean emp1 = Empty.Emp((EditText) cusPer);
                 if (emp) {
-                    input.setText("Required");
+                    asterisk.setText("*");
                 } else if (emp1) {
-                    cusPer.setText("Required");
+                    asterisk2.setText("*");
                 } else {
                     double number = Double.parseDouble(input.getText().toString());
                     double per = Double.parseDouble(cusPer.getText().toString());
                     per = per / 100;
-                    answer.setText(Percent.calcPercent(number, per) + "");
+                    answer.setText(Percent.calcPercent(number, per)+ "");
+                    asterisk2.setText("");
+                    asterisk.setText("");
                 }
             }
         });
@@ -56,52 +63,56 @@ public class tab1 extends Fragment {
                 input.setText("");
                 cusPer.setText("");
                 answer.setText("");
+                asterisk.setText("");
+                asterisk2.setText("");
             }
         });
         five.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            answer.setText(Percentage(input, .05)+"");
+            answer.setText(Percentage(input, .05, asterisk, asterisk2));
             }});
         ten.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                answer.setText(Percentage(input, .10)+"");
+                answer.setText(Percentage(input, .10,asterisk, asterisk2));
             }});
         fifteen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                answer.setText(Percentage(input, .15)+"");
+                answer.setText(Percentage(input, .15,asterisk, asterisk2));
             }});
         twenty.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                answer.setText(Percentage(input, .20)+"");
+                answer.setText(Percentage(input, .20,asterisk, asterisk2));
             }});
         twentyfive.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                answer.setText(Percentage(input, .25)+"");
+                answer.setText(Percentage(input, .25,asterisk, asterisk2));
             }});
         thirty.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                answer.setText(Percentage(input, .30)+"");
+                answer.setText(Percentage(input, .30,asterisk, asterisk2));
             }});
         thirtyfive.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                answer.setText(Percentage(input, .35)+"");
+                answer.setText(Percentage(input, .35,asterisk, asterisk2));
             }});
         forty.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                answer.setText(Percentage(input, .40)+"");
+                answer.setText(Percentage(input, .40,asterisk, asterisk2));
             }});
 
 
         return InputFragmentView;
     }
-    public static double Percentage (EditText givenAmount, double givenPercent){
+    public static String Percentage (EditText givenAmount, double givenPercent,TextView asterisk, TextView asterisk2){
         boolean emp = Empty.Emp((EditText) givenAmount);
         if (emp) {
-            givenAmount.setText("Required");
-            return 0;
+            asterisk.setText("*");
+            return "";
         } else {
             double number = Double.parseDouble(givenAmount.getText().toString());
-            return Percent.calcPercent(number, givenPercent);
+            asterisk.setText("");
+            asterisk2.setText("");
+            return Double.toString(Percent.calcPercent(number, givenPercent));
 
         }
     }

@@ -14,8 +14,13 @@ public class Empty {
         if (texty.matches("")|| texty.matches("Required")) {
             return true;
         }
-        else{
+        try{
+            Double test = Double.parseDouble(texty);
             return false;
+
+        }
+        catch(NumberFormatException e){
+            return true;
         }
     }
 }

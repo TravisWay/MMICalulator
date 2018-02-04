@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.travisway.shoppinghelp1.R;
+
 public class MainActivity extends AppCompatActivity {
 
     /**

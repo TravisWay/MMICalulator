@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.travisway.shoppinghelp1.R;
+
 /**
  * Created by travisway on 10/8/17.
  */
