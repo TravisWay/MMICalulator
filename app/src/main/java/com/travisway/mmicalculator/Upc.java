@@ -1,4 +1,4 @@
-package com.travisway.shoppinghelp;
+package com.travisway.mmicalculator;
 
 /**
  * Created by travisway on 10/1/17.

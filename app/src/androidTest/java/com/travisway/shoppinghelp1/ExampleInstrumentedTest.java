@@ -1,4 +1,4 @@
-package com.travisway.shoppinghelp;
+package com.travisway.mmicalculator;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.travisway.shoppinghelp1", appContext.getPackageName());
+        assertEquals("com.travisway.mmicalculator1", appContext.getPackageName());
     }
 }

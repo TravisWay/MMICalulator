@@ -1,4 +1,4 @@
-package com.travisway.shoppinghelp;
+package com.travisway.mmicalculator;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-import com.travisway.shoppinghelp1.R;
+import com.travisway.mmicalculator1.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    Intent i;
-    Uri u;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,9 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     tab2 tab2 = new tab2();
                     return tab2;
-//                case 2:
-//                    tab3 tab3 = new tab3();
-//                    return tab3;
+
 
             }
             return null;
@@ -164,7 +160,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
             return 2;
         }
 
@@ -175,8 +170,6 @@ public class MainActivity extends AppCompatActivity {
                     return "Percentages";
                 case 1:
                     return "Unit Price Calculator";
-//                case 2:
-//                    return "For Soulies";
             }
             return null;
         }

@@ -1,4 +1,4 @@
-package com.travisway.shoppinghelp;
+package com.travisway.mmicalculator;
 
 import android.widget.EditText;
 
