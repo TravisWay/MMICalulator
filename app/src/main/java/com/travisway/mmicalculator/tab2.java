@@ -45,6 +45,7 @@ public class tab2 extends Fragment {
             @Override
             public void onClick(View view){
             String s = "Buy";
+            String d = "Don't buy";
             boolean emp = Empty.Emp((EditText) units1);
             boolean emp1 = Empty.Emp((EditText) units2);
             boolean emp2 = Empty.Emp((EditText) price1);
@@ -67,14 +68,14 @@ public class tab2 extends Fragment {
             UPC2.setText(String.format("%.2f", Upc.UPC2));
             if (winner == 0) {
                 item1.setText(s);
-                item2.setText("");
+                item2.setText(d);
                 asterisk1.setText("");
                 asterisk2.setText("");
                 asterisk3.setText("");
                 asterisk4.setText("");
             } else if (winner == 1) {
                 item2.setText(s);
-                item1.setText("");
+                item1.setText(d);
                 asterisk1.setText("");
                 asterisk2.setText("");
                 asterisk3.setText("");
@@ -91,23 +92,54 @@ public class tab2 extends Fragment {
         }
     });
 
-        clear.setOnClickListener(new View.OnClickListener(){
-
-            public void onClick(View v) {
-
-                item1.setText("");
-                item2.setText("");
-                units2.setText("");
-                units1.setText("");
-                price1.setText("");
-                price2.setText("");
-                asterisk1.setText("");
-                asterisk2.setText("");
-                asterisk3.setText("");
-                asterisk4.setText("");
-                UPC1.setText("");
-                UPC2.setText("");
-
+        clear.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View view){
+                String s = "Buy";
+                boolean emp = Empty.Emp((EditText) units1);
+                boolean emp1 = Empty.Emp((EditText) units2);
+                boolean emp2 = Empty.Emp((EditText) price1);
+                boolean emp3 = Empty.Emp((EditText) price2);
+                if (emp) {
+                    asterisk1.setText("*");
+                }else if (emp1) {
+                    asterisk3.setText("*");
+                }else if (emp2) {
+                    asterisk2.setText("*");
+                }else if (emp3) {
+                    asterisk4.setText("*");
+                }else {
+                    double unitsOne = Double.parseDouble(units1.getText().toString());
+                    double unitsTwo = Double.parseDouble(units2.getText().toString());
+                    double priceOne = Double.parseDouble(price1.getText().toString());
+                    double priceTwo = Double.parseDouble(price2.getText().toString());
+                    int winner = Upc.UnitPriceCalculator(priceOne, priceTwo, unitsOne, unitsTwo);
+                    UPC1.setText(String.format("%.2f", Upc.UPC1));
+                    UPC2.setText(String.format("%.2f", Upc.UPC2));
+                    if (winner == 0) {
+                        item1.setText(s);
+                        item2.setText("");
+                        asterisk1.setText("");
+                        asterisk2.setText("");
+                        asterisk3.setText("");
+                        asterisk4.setText("");
+                    } else if (winner == 1) {
+                        item2.setText(s);
+                        item1.setText("");
+                        asterisk1.setText("");
+                        asterisk2.setText("");
+                        asterisk3.setText("");
+                        asterisk4.setText("");
+                    } else {
+                        item1.setText("Draw");
+                        item2.setText("Draw");
+                        asterisk1.setText("");
+                        asterisk2.setText("");
+                        asterisk3.setText("");
+                        asterisk4.setText("");
+                    }
+                }
             }
         });
 
